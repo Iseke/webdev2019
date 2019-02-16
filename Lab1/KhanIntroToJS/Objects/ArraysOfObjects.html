@@ -1,0 +1,19 @@
+var movies = [
+    {
+        title: "Puff the Magic Dragon",
+        review: "Best movie ever!!"
+    },
+    {
+        title: "How to train a Dragon",
+        review: "Best cartoon!"
+    }
+];
+for(var i = 0;i<movies.length;i++){
+    
+    fill(84, 140, 209);
+    textAlign(CENTER, CENTER);
+    textSize(20);
+    text(movies[i].title, 200, i*60+30);
+    textSize(15);
+    text(movies[i].review, 200, i*60+50);
+}
