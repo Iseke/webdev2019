@@ -1,0 +1,16 @@
+<body>
+<h1>TaskLists:</h1>
+
+<div *ngFor="let t of taskLists" (click)="getTask(t)" class="button">
+  {{t.id}}-{{t.name}}
+</div>
+
+<h1>Tasks</h1>
+<div *ngFor="let tt of tasks" class="tasks">
+  ID: {{tt.id}}<br>
+  Name: {{tt.name}}<br>
+  Created_at: {{tt.created_at}}<br>
+  Due_on: {{tt.due_on}}<br>
+  Status: {{tt.status}}<br>
+</div>
+</body>
