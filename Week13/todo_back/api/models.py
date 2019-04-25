@@ -1,8 +1,13 @@
 from django.db import models
 from datetime import datetime, timedelta
+from django.contrib.auth.models import User
+
 class TaskList(models.Model):
     name = models.CharField(max_length=200)
-
+    created_by = models.ForeignKey(User,on_delete=models.CASCADE,default=2)
+    class Meta:
+        verbose_name = 'TaskList'
+        verbose_name_plural = "TaskLists"
     def __str__(self):
         return f'{self.id}: {self.name}'
     def to_json(self):
