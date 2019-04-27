@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {MainService} from './main.service';
 import {HttpClient} from '@angular/common/http';
-import {ITask, ITaskList} from '../models/models';
+import {IAuthResponce, ITask, ITaskList} from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,22 +12,33 @@ export class ProviderService extends MainService {
     super(http);
   }
   getTaskList(): Promise<ITaskList[]> {
-    return this.get('http://localhost:8000/api/task_lists/', {});
+    return this.get('http://localhost:8000/task_lists/', {});
   }
   getTasks(taskList: ITaskList): Promise<ITask> {
-    return this.get(`http://localhost:8000/api/task_lists/${taskList.id}/tasks/`, {});
+    return this.get(`http://localhost:8000/task_lists/${taskList.id}/tasks/`, {});
   }
-  deleteTask(id: number): Promise<any> {
-    return this.delet(`http://localhost:8000/api/task_lists/${id}/`, {});
-  }
-  updateTask(taskList: ITaskList): Promise<ITaskList> {
-    return this.put(`http://127.0.0.1:8000/api/task_lists/${taskList.id}/`, {
+  updateTaskList(taskList: ITaskList): Promise<ITaskList> {
+    return this.put(`http://127.0.0.1:8000/task_lists/${taskList.id}/`, {
       name: taskList.name
     });
   }
-  createTask(nname: any): Promise<ITaskList> {
-    return this.post('http://127.0.0.1:8000/api/task_lists', {
-      name: nname
+
+  deleteTaskList(taskList: ITaskList): Promise<ITaskList> {
+    return this.delet(`http://127.0.0.1:8000/task_lists/${taskList.id}/`, {});
+  }
+
+  createTaskList(taskName: any): Promise<ITaskList> {
+    return this.post('http://127.0.0.1:8000/task_lists/', {
+      name: taskName
     });
+  }
+  auth(login: any, paswd: any): Promise<IAuthResponce> {
+    return this.post('http://localhost:8000/login/', {
+      username: login,
+      password: paswd
+    });
+  }
+  logoutt(): Promise<any> {
+    return this.post('http://localhost:8000/logout/', {});
   }
 }

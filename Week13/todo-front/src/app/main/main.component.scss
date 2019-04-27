@@ -1,40 +1,27 @@
 @import url("./reset.css");
 
-h1 {
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-  padding: 5%;
-  font-weight: bolder;
-  color: indianred;
-}
-
 body {
-  background: aquamarine !important;
+  background: aqua;
+  text-align: center;
 }
-
+.loginbtn {
+  background-color: blueviolet;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+}
+.task-list {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: darkorange;
+  border: 2px solid black;
+  border-radius: 20px;
+}
 
 .tasks {
-  color: chartreuse;
   font-size: 20px;
-  display: flex;
-  padding-top: 2%;
-  justify-content: center;
-  letter-spacing: 1px;
-}
-
-.button {
-  outline: none;
-  background-color: burlywood;
-  border: black;
-  color: blue;
-  padding: 15px 12px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
-  cursor: grab;
-  //margin: 0px auto;
-  margin-left: 25%;
-  margin-top: 3%;
-  width: 50%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: greenyellow;
+  padding: 16px 20px;
+  margin: 8px 0;
 }
