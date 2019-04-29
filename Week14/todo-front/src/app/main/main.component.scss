@@ -1,0 +1,27 @@
+@import url("./reset.css");
+
+body {
+  background: aqua;
+  text-align: center;
+}
+.loginbtn {
+  background-color: blueviolet;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+}
+.task-list {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: darkorange;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.tasks {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: greenyellow;
+  padding: 16px 20px;
+  margin: 8px 0;
+}
