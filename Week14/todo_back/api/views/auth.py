@@ -7,7 +7,9 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect,render
+from django.http import JsonResponse
 
 
 class UserList(generics.ListAPIView):
@@ -26,3 +28,20 @@ def login(request):
 def logout(request):
     request.auth.delete()
     return Response(status=status.HTTP_200_OK)
+
+@api_view(['POST','GET'])
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.data)
+        if form.is_valid():
+            form.save()
+            return redirect('/api/login/')
+        return JsonResponse({'out': 'invalid'})
+    else:
+        form = UserCreationForm()
+
+        args = {'form': form}
+        return render(request, '', args)
+
+
+

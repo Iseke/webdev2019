@@ -1,0 +1,22 @@
+<ng-container *ngIf="!logged">
+  <div>
+    <div><input type="text" placeholder="Username" [(ngModel)]="login" name="username" required></div>
+    <div><input type="password" placeholder="Password" [(ngModel)]="password" name="pwd" required></div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="logged">
+  <button (click)="logout()">Log out</button>
+
+  Products
+  <div *ngFor="let c of products">
+    <h2>{{c.id}} * {{c.name}} * {{c.price}} * {{c.quantity}}</h2>
+    <input type="number" [(ngModel)]="c.quantity">
+    <button (click)="add(c.quantity, c)">add</button>
+  </div>
+  User Produts
+  <div *ngFor="let o of userProducts">
+    <h2>{{o.product.name}} *  {{o.count}}</h2>
+    <button (click)="delete(o.id)"></button>
+  </div>
+</ng-container>

@@ -2,4 +2,4 @@
 # from .fbv import task_list,task_list_details,task_list_tasks
 # from .cbv import TaskLists,TaskListDetail,TaskListTasks
 from .generic_cbv import TaskLists, TaskListDetail, TaskListTasks
-# from  .auth import UserList,login,logout
+from  .auth import UserList,login,logout,register
